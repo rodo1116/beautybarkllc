@@ -108,3 +108,18 @@ h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0 .5em}
   .services-accordion details#additional-services .price-list li,
   .services-accordion details#touch-ups .price-list li{ padding:14px 0; }
 }
+/* Team bio formatting (headings + bullets inside details) */
+.team-card .bio h5{
+  margin: 10px 0 6px;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.team-card .bio ul{
+  margin: 6px 0 0 1.1em;
+  padding: 0;
+}
+.team-card .bio ul li{
+  margin: 6px 0;
+}
+
