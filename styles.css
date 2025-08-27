@@ -1,7 +1,7 @@
 /* Fonts + tokens */
 :root{
-  --ink:#fff;                 /* white text */
-  --bg:#111;                  /* black background */
+  --ink:#111;                 /* white text */
+  --bg:#fff;                  /* black background */
   --accent:#FF5C93;           /* pink accent */
   --accent-hover:#E14B7F;     /* darker pink */
   --radius:12px;
