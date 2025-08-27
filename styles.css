@@ -123,3 +123,12 @@ h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0 .5em}
   margin: 6px 0;
 }
 
+/* About page hero background image */
+.about-page .about-hero{
+  /* from styles.css (in assets/css) to assets/img is ../img */
+  background: url("../img/hero.png") center/cover no-repeat;
+  min-height: 280px;
+  border-radius: var(--radius);
+  padding: clamp(24px,5vw,48px);
+}
+
