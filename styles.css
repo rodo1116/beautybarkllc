@@ -1,7 +1,7 @@
 /* Fonts + tokens */
 :root{
-  --ink:#111;                 /* white text */
-  --bg:#fff;                  /* black background */
+  --ink:#fff;                 /* white text */
+  --bg:#111;                  /* black background */
   --accent:#FF5C93;           /* pink accent */
   --accent-hover:#E14B7F;     /* darker pink */
   --radius:12px;
@@ -12,7 +12,7 @@
 *{box-sizing:border-box}
 body{margin:0;font:16px/1.6 'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--ink);background:var(--bg)}
 h1,h2,h3,h4{font-family:'DM Serif Display', Georgia, 'Times New Roman', serif}
-a{color:inherit;text-underline-offset:2px}
+a{color:inherit;text-underline-offset:2px}black
 
 /* Layout & type */
 main{padding:40px clamp(16px,4vw,48px)}
