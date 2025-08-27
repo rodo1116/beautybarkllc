@@ -1,8 +1,7 @@
-
 /* Fonts + tokens */
 :root{
-  --ink:#111;                 /* black text */
-  --bg:#fff;                  /* white background */
+  --ink:#fff;                 /* white text */
+  --bg:#111;                  /* black background */
   --accent:#FF5C93;           /* pink accent */
   --accent-hover:#E14B7F;     /* darker pink */
   --radius:12px;
@@ -13,16 +12,34 @@
 *{box-sizing:border-box}
 body{margin:0;font:16px/1.6 'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--ink);background:var(--bg)}
 h1,h2,h3,h4{font-family:'DM Serif Display', Georgia, 'Times New Roman', serif}
+a{color:inherit;text-underline-offset:2px}
 
-a{color:inherit}
+/* Layout & type */
 main{padding:40px clamp(16px,4vw,48px)}
 h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0 .5em}
-.lead{max-width:70ch;font-size:clamp(16px,3.8vw,18px);line-height:1.7;color:#222}
-.disclaimer{font-size:clamp(13px,3.2vw,14px);color:#444}
+.lead{max-width:70ch;font-size:clamp(16px,3.8vw,18px);line-height:1.7;color:rgba(255,255,255,.85)}
+.disclaimer{font-size:clamp(13px,3.2vw,14px);color:rgba(255,255,255,.7)}
+
+/* Buttons */
 .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 18px;border-radius:var(--radius);font-weight:700;box-shadow:var(--shadow)}
 .btn:hover{background:var(--accent-hover)}
+/* Two-CTA row (Call / Message) with extra bottom spacing */
+.cta-duo{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 28px}
+.btn-call{background:var(--accent);color:#fff}
+.btn-call:hover{background:var(--accent-hover)}
+.btn-message{background:transparent;color:var(--ink);border:2px solid var(--accent)}
+.btn-message:hover{background:var(--accent);color:#fff}
 
-.services-accordion details{border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);padding:0.75rem 1rem;background:#fff;margin:0 0 12px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+/* Accordions */
+.services-accordion details{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:var(--radius);
+  padding:0.75rem 1rem;
+  background:#fff;
+  color:#111; /* ensure readable text inside white cards on dark page */
+  margin:0 0 12px;
+  box-shadow:0 1px 0 rgba(0,0,0,.04)
+}
 .services-accordion details[open]{background:rgba(0,0,0,.02)}
 .services-accordion summary{cursor:pointer;font-weight:700;list-style:none;position:relative;user-select:none;outline:0;margin:-0.75rem -1rem;padding:0.75rem 2.25rem 0.75rem 1rem;border-radius:12px}
 .services-accordion summary::-webkit-details-marker{display:none}
@@ -30,6 +47,7 @@ h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0 .5em}
 .services-accordion details[open] summary::after{content:'–'}
 .services-accordion summary:focus-visible{box-shadow:0 0 0 3px rgba(0,0,0,.15)}
 .services-accordion .includes{margin:.5rem 0 .75rem;color:#555}
+.services-accordion details a{color:#111}
 
 /* Right-aligned prices */
 .services-accordion .price-list{margin:0;padding:0;list-style:none}
@@ -38,15 +56,55 @@ h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0 .5em}
 .services-accordion .price-list .label .note{display:block;font-size:.92em;color:#555;margin-top:2px}
 .services-accordion .price-list .price{font-weight:700;white-space:nowrap;justify-self:end}
 
+/* Lined, roomier rows for Additional Services + Touch Ups */
+.services-accordion details#additional-services .price-list,
+.services-accordion details#touch-ups .price-list{
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.services-accordion details#additional-services .price-list li,
+.services-accordion details#touch-ups .price-list li{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: 16px;   /* more space between label & price */
+  padding: 12px 0;    /* taller rows */
+}
+/* separators */
+.services-accordion details#additional-services .price-list li + li,
+.services-accordion details#touch-ups .price-list li + li{
+  border-top: 1px solid rgba(17,17,17,.12);
+}
+/* notes breathe a bit */
+.services-accordion details#additional-services .label .note,
+.services-accordion details#touch-ups .label .note{
+  display: block;
+  margin-top: 3px;
+  color: #666;
+}
+/* optional: subtle zebra striping */
+.services-accordion details#additional-services .price-list li:nth-child(odd),
+.services-accordion details#touch-ups .price-list li:nth-child(odd){
+  background: rgba(17,17,17,.02);
+  border-radius: 8px;
+  margin: 0 -8px;     /* extend bg edge-to-edge inside card */
+  padding: 12px 8px;  /* keep vertical rhythm the same */
+}
+
 /* Sticky mobile CTA */
 .mobile-cta{position:sticky;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(6px);border-top:1px solid rgba(0,0,0,.08);display:none;z-index:999}
 .mobile-cta__btn{display:block;text-align:center;padding:14px 16px;font-weight:700;border-radius:var(--radius);text-decoration:none;background:var(--accent);color:#fff;box-shadow:var(--shadow)}
 .mobile-cta__btn:hover{background:var(--accent-hover)}
 
+/* Responsive tweaks */
 @media (max-width:782px){
   main{padding-left:16px;padding-right:16px}
   .mobile-cta{display:block}
+  .cta-duo{ margin-bottom:32px; } /* extra breathing room on phones */
 }
 @media (max-width:480px){
   .services-accordion details{margin-bottom:10px}
+  .services-accordion details#additional-services .price-list li,
+  .services-accordion details#touch-ups .price-list li{ padding:14px 0; }
 }
