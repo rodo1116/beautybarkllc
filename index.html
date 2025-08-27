@@ -3,124 +3,249 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services — The Beauty Bark (Static)</title>
+  <title>About — The Beauty Bark (Static)</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Global stylesheet from your project -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Page-scoped tweaks: keeps desktop, improves mobile -->
+  <style>
+    /* ===== About page: mobile-first polish, reusing your tokens ===== */
+    .about-hero{
+      max-width: 1000px;
+      margin: 0 auto 24px;
+    }
+    .about-hero p{ color: rgba(0,0,0,.85); }
+
+    .about-values{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0 12px;
+    }
+    .about-values .card{
+      background:#fff; color:#111;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.04);
+    }
+    .about-values .card h3{ font-family: 'DM Serif Display', serif; margin: 4px 0 6px; }
+
+    .team{
+      margin-top: 28px;
+    }
+    .team h2{ margin: 0 0 12px; }
+    .team-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .team-card{
+      background:#fff; color:#111;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.04);
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .team-card img{
+      width: 96px; height: 96px; object-fit: cover; border-radius: 10px;
+    }
+    .team-card h4{
+      margin: 0 0 6px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .team-card .role{ font-weight: 600; margin: 0 0 6px; }
+    .team-card details{ grid-column: 1 / -1; }
+    .team-card details summary{
+      cursor: pointer; list-style:none; font-weight:600;
+      padding: 8px 0; margin: 6px 0 0;
+      position: relative;
+    }
+    .team-card details summary::-webkit-details-marker{ display:none; }
+    .team-card details summary::after{
+      content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      color: var(--accent); font-weight: 700;
+    }
+    .team-card details[open] summary::after{ content: '–'; }
+    .team-card details .bio{ margin: 6px 0 0; color:#333; }
+
+    /* CTA at bottom (optional) */
+    .about-cta{
+      display:flex; gap:12px; flex-wrap:wrap; margin: 28px 0 0;
+    }
+
+    /* Responsive: keep desktop layout, optimize phones */
+    @media (max-width: 1024px){
+      .about-values{ grid-template-columns: repeat(2, 1fr); }
+      .team-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 782px){
+      .about-hero p{ line-height: 1.75; }
+      .about-values{ grid-template-columns: 1fr; }
+      .team-grid{ grid-template-columns: 1fr; }
+      .team-card{ grid-template-columns: 88px 1fr; }
+      .about-cta{ margin-top: 32px; }
+    }
+  </style>
 </head>
 <body>
-  <main class="services-page">
-    <header class="masthead">
-      <h1>Services</h1>
-      <p class="lead">Browse through our extensive list of services and choose whatever suits you and your furry friend's needs!</p>
-      <p class="disclaimer"><em>IMPORTANT: The prices listed are BASE prices. Additional charges may be applied for demattting depending on the severity.</em></p>
-      <p><a class="btn" href="contact.html">Call / Message to Book</a></p>
-    </header>
-
-    <section class="services-accordion">
-      <details>
-        <summary>Express Services</summary>
-        <p>Upgrade to our express service for uninterrupted grooming from start to finish. With express service, we prioritize your pet's grooming without pauses, ensuring a swift turnaround, available for an additional fee to bath or groom.</p>
-        <ul class="price-list">
-          <li><span class="label"><strong>Small</strong><span class="note">20 lbs or less (1–2 Hours)</span></span><span class="price">$20</span></li>
-          <li><span class="label"><strong>Medium</strong><span class="note">Between 21–45 LBS (1.5–2 Hours)</span></span><span class="price">$25</span></li>
-          <li><span class="label"><strong>Large</strong><span class="note">Between 46–65 LBS (2–3 Hours)</span></span><span class="price">$30</span></li>
-          <li><span class="label"><strong>Extra‑Large</strong><span class="note">66 lbs or more (2.5–3.5 Hours)</span></span><span class="price">$40</span></li>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="site-logo" aria-label="Logo placeholder">LOGO</div>
+      <nav id="mobileMenu" class="site-nav" hidden>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-      </details>
+      </nav>
+    </div>
+  </header>
 
-      <details>
-        <summary>Short Hair Full Service Haircut</summary>
-        <p class="includes">Includes: Nail Clip, Shampoo, Blow Out, Brush Out, Ear Cleaning.</p>
-        <ul class="price-list">
-          <li><span class="label"><strong>Small</strong><span class="note">20 lbs or less</span></span><span class="price">$65</span></li>
-          <li><span class="label"><strong>Medium</strong><span class="note">Between 21–45 LBS</span></span><span class="price">$75</span></li>
-          <li><span class="label"><strong>Large</strong><span class="note">Between 46–65 LBS</span></span><span class="price">$85</span></li>
-          <li><span class="label"><strong>Extra Large</strong><span class="note">66–80 LBS</span></span><span class="price">$95</span></li>
-          <li><span class="label"><strong>Extra-Extra Large</strong><span class="note">80 LBS or more</span><span class="price">$100 and up</span></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Long Hair Full Service Haircut</summary>
-        <p class="includes">Includes: Nail Clip, Shampoo, Blow Out, Brush Out, Ear Cleaning.</p>
-        <ul class="price-list">
-          <li><span class="label"><strong>Small</strong><span class="note">Up to 20 LBS</span></span><span class="price">$75</span></li>
-          <li><span class="label"><strong>Medium</strong><span class="note">21–45 LBS</span></span><span class="price">$90</span></li>
-          <li><span class="label"><strong>Large</strong><span class="note">46–65 LBS</span></span><span class="price">$100</span></li>
-          <li><span class="label"><strong>Extra Large</strong><span class="note">66–80 LBS</span></span><span class="price">$120</span></li>
-          <li><span class="label"><strong>Extra-Extra Large</strong><span class="note">80 LBS or more</span></span><span class="price">$140 and up</span></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Basic Bath</summary>
-        <p class="includes">Includes: Nail Clip, Shampoo, Blow Out, Ear Cleaning.</p>
-        <ul class="price-list">
-          <li><span class="label"><strong>Small</strong><span class="note">Up to 20 LBS (Hair Length Will Determine Price)</span></span><span class="price">$40–50</span></li>
-          <li><span class="label"><strong>Medium</strong><span class="note">Between 21–45 LBS</span></span><span class="price">$55</span></li>
-          <li><span class="label"><strong>Large</strong><span class="note">Between 46–65 LBS</span></span><span class="price">$60</span></li>
-          <li><span class="label"><strong>Extra Large</strong><span class="note">Between 66–80 LBS</span></span><span class="price">$65 &amp; up</span></li>
-          <li><span class="label"><strong>Extra-Extra Large</strong><span class="note">80 LBS or more</span></span><span class="price">$70 &amp; up</span></li>
-        </ul>
-      </details>
-
-      <details id="additional-services">
-        <summary>Additional Services</summary>
-        <ul class="price-list">
-          <li><span class="label">Teeth Brushing</span><span class="price">$10</span></li>
-          <li><span class="label">Ouai Luxury Facial</span><span class="price">$5</span></li>
-          <li><span class="label">Shampoo Upgrade</span><span class="price">$10</span></li>
-          <li><span class="label">Ear Plucking</span><span class="price">$10</span></li>
-          <li><span class="label">Anal Gland Expression <span class="note">External</span></span><span class="price">$10</span></li>
-          <li><span class="label">Anal Gland Expression <span class="note">Internal</span></span><span class="price">$15</span></li>
-          <li><span class="label">De‑Matting <span class="note">price based on severity</span></span><span class="price">$10–30</span></li>
-          <li><span class="label">Nail Grind <span class="note">à la carte</span></span><span class="price">$20</span></li>
-          <li><span class="label">Nail Trim <span class="note">à la carte</span></span><span class="price">$15</span></li>
-        </ul>
-      </details>
-
-      <details id="touch-ups">
-        <summary>Touch Ups</summary>
-        <ul class="price-list">
-          <li><span class="label">Beard / Face</span><span class="price">$15</span></li>
-          <li><span class="label">Sanitary Front / Back</span><span class="price">$10</span></li>
-          <li><span class="label">Paws Trim</span><span class="price">$10</span></li>
-          <li><span class="label">Eye Trim</span><span class="price">$5</span></li>
-          <li><span class="label">Pick 3 Package</span><span class="price">$20</span></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Cat Haircuts</summary>
-        <p class="includes">Includes: Sanitary, Ear Cleaning, Nail Trim.</p>
-        <ul class="price-list">
-          <li><span class="label">Lion Cut <span class="note">Price is based on temperament.</span></span><span class="price">$125</span></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Cat Baths</summary>
-        <p class="includes">Includes: Blow Out, Sanitary, Ear Cleaning, Nail Trim.</p>
-        <ul class="price-list">
-          <li><span class="label">Bath <span class="note">Price is based on temperament.</span></span><span class="price">$85</span></li>
-          <li><span class="label">Pre‑Bath Degrease <span class="note">(If Needed)</span></span><span class="price">$25</span></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Cat Additional Services</summary>
-        <ul class="price-list">
-          <li><span class="label">Nail Trim</span><span class="price">$25</span></li>
-          <li><span class="label">De‑Matting</span><span class="price">$15–30</span></li>
-        </ul>
-      </details>
+  <main class="about-page">
+    <section class="about-hero">
+      <h1>About The Beauty Bark</h1>
+      <p>Opening The Beauty Barks marks a culmination of many years of sacrifice, dedication to our craft, and pride in our work. Our passion for animals and over 15 years of experience has spurred us to improve the way we provide service for pets and their owners. We’re a boutique grooming studio focused on gentle handling, clean ingredients, and a calm spa experience for dogs and cats. Every appointment is tailored to your pet’s temperament and coat needs.</p>
+      <p>Our team combines precision grooming with a warm, low‑stress environment. From first‑time puppies to seniors and special‑care pets, we meet them where they are.</p>
     </section>
 
-    <p><strong>Appointment Only</strong> for cats, no walk‑ins. Call or email to book your cat's appointment. Please bring your cat in a carrier. Thank you!</p>
+    <section class="about-values">
+      <article class="card">
+        <h3>Gentle, Low‑Stress Care</h3>
+        <p>One‑on‑one attention and fear‑free handling help your pet feel safe from check‑in to pickup.</p>
+      </article>
+      <article class="card">
+        <h3>Clean & Safe</h3>
+        <p>Thorough sanitation between appointments and products chosen for sensitive skin.</p>
+      </article>
+      <article class="card">
+        <h3>Spa‑Level Finish</h3>
+        <p>Thoughtful coat styling, tidy trims, and shine‑boosting finish for that fresh‑from‑the‑spa look.</p>
+      </article>
+    </section>
+
+    <section class="team">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        <!-- Team Member -->
+        <article class="team-card">
+          <img src="assets/img/team-1.jpg" alt="Anna Marie Smith, Owner & Groomer">
+          <div>
+            <h4>Anna Marie Smith</h4>
+            <p class="role">Owner & Groomer</p>
+            <p>Gentle, humane, non-forced grooming with extra patience for nervous pups.</p>
+          </div>
+
+          <details>
+            <summary>About Anna Marie Smith</summary>
+            <div class="bio">
+              <p>My name is Anna Marie Smith, and I am the proud owner and a certified groomer at The Beauty Bark. With more than a decade of experience in dog grooming, my professional philosophy is centered around a gentle, humane, and non-forced approach—always prioritizing the happiness and health of our furry clients. When it comes to calming nervous pups, I firmly believe that patience and meeting them where they’re at is key.</p>
+
+              <h5>Qualifications &amp; Experience</h5>
+              <ul class="bullets">
+                <li>Pet Styling Certification</li>
+                <li>Pet CPR Certification</li>
+                <li>Over 10 years of dog-grooming experience, plus grooming cats and rabbits</li>
+                <li>Special affinity for Schnauzers and Spaniels</li>
+              </ul>
+
+              <h5>A Little About Me</h5>
+              <p>Outside of work, I cherish movie nights with my four kids, love getting lost in a good book, and enjoy traveling with my family, especially our annual beach vacation and camping trip.</p>
+              <p>I have a full house with five dogs and two cats: a 14-year-old English Cocker Spaniel, two 10-year-old Chihuahuas, a 4-year-old Scottish Terrier, and a 2-year-old Pitbull. My pack makes no sense, and I wouldn’t have it any other way!</p>
+
+              <p><strong>Friendly reminder:</strong> always prioritize vitality over vanity when it comes to grooming your furry companions!</p>
+              <p><em>Fun Fact:</em> I'm originally from Michigan!</p>
+            </div>
+          </details>
+        </article>
+
+
+        <!-- Team Member -->
+        <article class="team-card">
+          <img src="assets/img/team-2.jpg" alt="Rachel Barnes, Owner & Groomer">
+          <div>
+            <h4>Rachel Barnes</h4>
+            <p class="role">Owner & Groomer</p>
+            <p>Safety-first, comfort-focused grooming grounded in trust.</p>
+          </div>
+
+          <details>
+            <summary>About Rachel Barnes</summary>
+            <div class="bio">
+              <p>Hi, I'm Rachel Barnes, and I'm an owner and passionate groomer here at The Beauty Bark. With more than five years of professional experience, my core philosophy is to create a grooming experience centered on safety, comfort, and trust. I hold an ICPG (International Professional Groomers) Certification and am trained in Pet CPR, so you can be confident that your pet's well-being is always my top priority.In addition to standard grooming, I also specialize in creative pet styling. Whether it's a splash of color, a unique cut, or an elaborate design, I can transform your pet into a work of art that reflects your vision.</p>
+
+              <h5>My Specialties</h5>
+              <ul class="bullets">
+                <li>Long-haired breeds: Poodles, Doodles, and Bichons</li>
+                <li>Beautiful, healthy transformations with an eye for finish</li>
+                <li>Gentle, patient handling for nervous or anxious pets</li>
+              </ul>
+
+              <h5>A Little About Me</h5>
+              <p>When I'm not in the salon, you’ll find me tackling DIY projects or exploring the local restaurant scene since Houston is one of the most diverse places on the planet, I'm a self-proclaimed foodie!</p>
+              <p>I have 3 rescue pups: Tucker, Tytus, and Peaches who’ve shown me the joy of a calm, loving, and full home.</p>
+            </div>
+          </details>
+        </article>
+
+
+        <!-- Team Member -->
+        <article class="team-card">
+          <img src="assets/img/team-3.jpg" alt="Marisol Jimenez, Office Manager">
+          <div>
+            <h4>Marisol Jimenez</h4>
+            <p class="role">Office Manager</p>
+            <p>Scheduling, customer care, and a seamless Beauty Bark experience.</p>
+          </div>
+
+          <details>
+            <summary>About Marisol Jimenez</summary>
+            <div class="bio">
+              <p>My name is Marisol Jimenez, and with over five years of experience in the pet hospitality industry, I'm dedicated to ensuring every part of your experience with The Beauty Bark is seamless. As the Office Manager, I'm responsible for scheduling, managing our website and social media, and guaranteeing customer satisfaction. I also hold a Pet CPR Certification, so you can trust that your pet's safety and well-being are always in good hands.</p>
+
+              <p>I genuinely enjoy my work—building trust with every pet and watching their personalities shine is one of the most rewarding parts of what I do.</p>
+
+              <h5>What I Do</h5>
+              <ul class="bullets">
+                <li>Scheduling &amp; appointment coordination</li>
+                <li>Website &amp; social media management</li>
+                <li>Customer experience &amp; satisfaction</li>
+                <li>Pet CPR Certified</li>
+              </ul>
+
+              <h5>A Little About Me</h5>
+              <p>At home, I have two amazing companions of my own: Scooby, my playful 6-year-old Labrador Retriever who loves squeaky toys, and Lady, my spirited 3-year-old Beagle who's always on the hunt for squirrels.</p>
+              <p>When I'm not with my pups, you can find me indulging in my hobbies. I love catching the latest flick at the movies, trying out new restaurants, diving into video games, and unwinding with some arts and crafts.</p>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <a class="btn btn-call" href="tel:+10000000000">Call to Book</a>
+      <a class="btn btn-message" href="contact.html">Message to Book</a>
+    </section>
   </main>
 
+  <!-- Sticky mobile CTA (inherits your global styles) -->
   <div class="mobile-cta" aria-hidden="true">
     <a class="mobile-cta__btn" href="contact.html" rel="nofollow noopener">Book Now</a>
   </div>
