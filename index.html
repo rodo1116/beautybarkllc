@@ -3,285 +3,216 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Beauty Bark • Pet Grooming</title>
-  <meta name="description" content="Modern, gentle pet grooming. Easy online booking, transparent pricing, and groomers who treat your pets like family." />
+  <title>The Beauty Bark • Professional Pet Grooming Services</title>
+  <meta name="description" content="In the heart of Houston, our pet grooming salon ensures happy, well-groomed pets. Book online, view services, and get answers to FAQs." />
+  <base href="./">
+  <meta name="theme-color" content="#0f1115">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <script defer src="./script.js"></script>
+
+  <!-- Inline fallback in case styles.css fails to load on GitHub Pages -->
+  <style id="fallback-colors">
+    html, body { background:#0f1115; color:#f5f7fb; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="brand" aria-label="The Beauty Bark home">
-        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=200&auto=format&fit=crop" alt="" class="brand-logo" />
+      <a class="brand" href="./" aria-label="The Beauty Bark Home">
+        <img class="brand-logo" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=200&auto=format&fit=crop" alt="" />
         <span class="brand-name">The Beauty Bark</span>
       </a>
+
       <nav class="nav" aria-label="Primary">
         <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navList">Menu</button>
         <ul id="navList" class="nav-list">
+          <li><a href="./">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#location">Location</a></li>
-          <li><a class="btn btn-small" href="#book" data-gtm-event="nav_book_now">Book now</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#membership">Membership</a></li>
+          <li><a href="#daycare">Doggie Daycare</a></li>
+          <li><a href="#creative">Creative Grooming</a></li>
+          <li><a href="#boarding">Boarding</a></li>
+          <li><a class="btn btn-small" href="#book">Book Now</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
   <main id="main">
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1>Gentle, stress‑aware grooming for happy pets.</h1>
-          <p>Easy online booking, kind groomers, and results you’ll love. We specialize in double‑coated breeds and sensitive pups.</p>
+          <h1>Where Pets become pampered!</h1>
+          <p>In the heart of Houston, our pet grooming salon ensures happy, well‑groomed pets.</p>
           <div class="hero-ctas">
-            <a href="#book" class="btn" data-gtm-event="hero_book">Book grooming</a>
-            <a href="tel:XXX-XXX-XXXX" class="btn btn-outline" data-gtm-event="hero_call">Call us</a>
+            <a href="#book" class="btn">Book Now</a>
+            <a href="tel:2815296988" class="btn btn-outline">Call 281‑529‑6988</a>
           </div>
           <ul class="trust">
-            <li>Fear‑free informed handling</li>
+            <li>Gentle, stress‑aware handling</li>
             <li>Breed‑specific styling</li>
             <li>Transparent pricing</li>
           </ul>
         </div>
         <div class="hero-media">
-          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop" alt="Freshly groomed happy dog" />
+          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop" alt="Happy freshly groomed dog" />
         </div>
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services (grid preview) -->
     <section id="services" class="section">
       <div class="container">
-        <h2 class="section-title">Popular services</h2>
+        <h2 class="section-title">Popular Services</h2>
         <div class="cards">
           <article class="card">
             <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?q=80&w=800&auto=format&fit=crop" alt="Bath & brush" />
             <div class="card-body">
               <h3>Bath &amp; Brush</h3>
-              <p>Warm bath, blow‑dry, brush‑out, nail trim, ear clean. Ideal for maintenance between full grooms.</p>
-              <div class="card-actions">
-                <button class="btn btn-small book-button" data-service="Bath & Brush">Book</button>
-              </div>
+              <p>Warm bath, blow‑dry, brush‑out, nail trim, ear clean. Great between full grooms.</p>
+              <div class="card-actions"><a class="btn btn-small" href="#book">Book</a></div>
             </div>
           </article>
           <article class="card">
             <img src="https://images.unsplash.com/photo-1558944351-cba2b66a5f8e?q=80&w=800&auto=format&fit=crop" alt="Full groom" />
             <div class="card-body">
               <h3>Full Groom</h3>
-              <p>Bath &amp; brush package + breed‑specific haircut (incl. silhouette cut for double‑coats).</p>
-              <div class="card-actions">
-                <button class="btn btn-small book-button" data-service="Full Groom">Book</button>
-              </div>
+              <p>Complete service + breed‑specific haircut (incl. silhouette cut for double‑coats).</p>
+              <div class="card-actions"><a class="btn btn-small" href="#book">Book</a></div>
             </div>
           </article>
           <article class="card">
             <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop" alt="De‑shedding" />
             <div class="card-body">
               <h3>De‑shedding</h3>
-              <p>Thorough undercoat removal to reduce shedding at home. Great for double‑coated breeds.</p>
-              <div class="card-actions">
-                <button class="btn btn-small book-button" data-service="De-shedding">Book</button>
-              </div>
+              <p>Undercoat removal to reduce shedding at home. Perfect for double‑coated breeds.</p>
+              <div class="card-actions"><a class="btn btn-small" href="#book">Book</a></div>
             </div>
           </article>
           <article class="card">
             <img src="https://images.unsplash.com/photo-1626276100889-1566f383e864?q=80&w=800&auto=format&fit=crop" alt="Puppy intro" />
             <div class="card-body">
               <h3>Puppy Intro</h3>
-              <p>Low‑stress, short sessions to build trust. Gentle handling and positive first experiences.</p>
-              <div class="card-actions">
-                <button class="btn btn-small book-button" data-service="Puppy Intro">Book</button>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=800&auto=format&fit=crop" alt="Nail trim" />
-            <div class="card-body">
-              <h3>Nail Trim</h3>
-              <p>Quick trim and smooth finish. Add‑on or standalone—your choice.</p>
-              <div class="card-actions">
-                <button class="btn btn-small book-button" data-service="Nail Trim">Book</button>
-              </div>
+              <p>Short, low‑stress sessions to build trust and positive first experiences.</p>
+              <div class="card-actions"><a class="btn btn-small" href="#book">Book</a></div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section id="how" class="section alt">
+    <!-- Service Duration Disclaimer -->
+    <section class="section alt">
       <div class="container">
-        <h2 class="section-title">How it works</h2>
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">1</span>
-            <h3>Pick a service</h3>
-            <p>Choose a package and any add‑ons. We’ll suggest timing and price by size/breed.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">2</span>
-            <h3>Choose your groomer</h3>
-            <p>Prefer someone specific or first available—either way your pet is in great hands.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">3</span>
-            <h3>Book a time</h3>
-            <p>See only open slots—confirm in seconds. You’ll get reminders before your visit.</p>
-          </div>
-        </div>
-        <div class="center">
-          <a href="#book" class="btn" data-gtm-event="how_book_cta">Start booking</a>
-        </div>
+        <h2 class="section-title">Service Duration Disclaimer</h2>
+        <p>The duration times for grooming and baths are approximate and can vary based on factors like how busy we are, whether your dog is a new client, and your dog’s behavior during the session. If you need your dog done by a specific time or prefer a quicker turnaround, we offer an Express Fee to guarantee faster service.</p>
       </div>
     </section>
 
-    <!-- Reviews -->
-    <section id="reviews" class="section">
+    <!-- FAQs -->
+    <section id="faqs" class="section">
       <div class="container">
-        <h2 class="section-title">Happy humans. Happier pups.</h2>
-        <div class="reviews" aria-live="polite">
-          <figure class="review active">
-            <blockquote>“Best groom my Husky has ever had—she came home relaxed and gorgeous.”</blockquote>
-            <figcaption>— Maria G.</figcaption>
-          </figure>
-          <figure class="review">
-            <blockquote>“So patient with our nervous rescue. Booking was super easy.”</blockquote>
-            <figcaption>— Jamal R.</figcaption>
-          </figure>
-          <figure class="review">
-            <blockquote>“Love their silhouette cuts on our Golden. 10/10 recommend.”</blockquote>
-            <figcaption>— Priya S.</figcaption>
-          </figure>
-        </div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <details class="faq">
+          <summary>How much will my pet’s haircut cost?</summary>
+          <div class="faq-body">
+            <p>Our grooming services are based on weight, coat condition, and requested services. Base prices by weight are listed and subject to change. (Pets are subject to weigh‑in at time of appointment.)</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Will my dog get relief breaks during their haircut?</summary>
+          <div class="faq-body">
+            <p>Yes! We give your dog a relief break every 2–3 hours during their spa day.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What vaccinations are required at The Beauty Bark?</summary>
+          <div class="faq-body">
+            <p>Dogs: Rabies, Distemper Parvo, and Bordetella.<br/>Cats: Rabies and FVRCP.</p>
+          </div>
+        </details>
       </div>
     </section>
 
-    <!-- Location & hours -->
-    <section id="location" class="section alt">
+    <!-- Contact / Location -->
+    <section id="contact" class="section alt">
       <div class="container loc-grid">
         <div>
-          <h2 class="section-title">Visit us</h2>
+          <h2 class="section-title">Contact Us</h2>
+          <p class="muted">Better yet, see us in person!</p>
           <ul class="contact-list">
-            <li><strong>Address:</strong> <span><!-- TODO: add street, city, state, zip --></span></li>
-            <li><strong>Phone:</strong> <a href="tel:XXX-XXX-XXXX">XXX‑XXX‑XXXX</a></li>
-            <li><strong>Email:</strong> <a href="mailto:hello@thebeautybark.pet">hello@thebeautybark.pet</a></li>
-            <li><strong>Hours:</strong> Tue–Sat 9am–6pm (example)</li>
+            <li><strong>Address:</strong> 14469 Memorial Drive, Houston, TX 77079</li>
+            <li><strong>Phone:</strong> <a href="tel:2815296988">281‑529‑6988</a></li>
+            <li><strong>Email:</strong> <a href="mailto:beautybarkmanager@gmail.com">beautybarkmanager@gmail.com</a></li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/the_beautybark_htx" target="_blank" rel="noopener">@the_beautybark_htx</a></li>
+            <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@the_beautybark" target="_blank" rel="noopener">@the_beautybark</a></li>
+            <li><strong>Hours:</strong> Tue–Sat 7am–7pm (example)</li>
           </ul>
           <div class="cta-row">
-            <a href="#book" class="btn" data-gtm-event="location_book_cta">Book now</a>
-            <a href="https://maps.google.com/?q=The%20Beauty%20Bark" target="_blank" rel="noopener" class="btn btn-outline">Open in Maps</a>
+            <a href="#book" class="btn">Book Now</a>
+            <a class="btn btn-outline" href="https://maps.google.com/?q=14469%20Memorial%20Drive%20Houston%2C%20TX%2077079" target="_blank" rel="noopener">Open in Maps</a>
           </div>
         </div>
         <div class="map-wrap">
-          <iframe title="Map to The Beauty Bark" src="https://maps.google.com/maps?q=The%20Beauty%20Bark&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+          <iframe title="Map to The Beauty Bark" src="https://maps.google.com/maps?q=14469%20Memorial%20Drive%20Houston%2C%20TX%2077079&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
-    <!-- Book section -->
+    <!-- Book CTA -->
     <section id="book" class="section">
       <div class="container book-inner">
         <div>
           <h2 class="section-title">Ready to book?</h2>
-          <p>Use our streamlined flow so you don’t have to scroll a giant calendar. Pick a service, (optionally) a groomer, then choose a time.</p>
+          <p>Choose a service and see available times—no giant calendar to scroll.</p>
         </div>
         <div class="book-actions">
-          <button class="btn btn-large" id="openBooking" data-gtm-event="book_open">Start booking</button>
-          <a class="btn btn-outline btn-large" href="tel:XXX-XXX-XXXX" data-gtm-event="book_call">Call to book</a>
+          <a class="btn btn-large" href="https://square.site/book/YOUR-SQUARE-BOOKING-LINK" target="_blank" rel="noopener">Start Booking</a>
+          <a class="btn btn-outline btn-large" href="tel:2815296988">Call to Book</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <span class="brand-name">The Beauty Bark</span>
-        <p class="muted">Kind grooming, clear pricing, and easy booking.</p>
+        <p class="muted">Professional pet grooming in Houston, TX.</p>
       </div>
       <nav aria-label="Footer">
         <ul class="footer-links">
           <li><a href="#services">Services</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#location">Location</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="footer-cta"><a href="#book" class="btn btn-small" data-gtm-event="footer_book">Book now</a></div>
+      <div class="footer-cta"><a href="#book" class="btn btn-small">Book Now</a></div>
     </div>
     <div class="container legal">
       <small>© <span id="year"></span> The Beauty Bark. All rights reserved.</small>
     </div>
   </footer>
 
-  <!-- Booking Modal (Service → Groomer → Time) -->
-  <dialog id="bookingModal" aria-labelledby="bookingTitle">
-    <form method="dialog" class="booking-modal">
-      <header class="booking-header">
-        <h3 id="bookingTitle">Book an appointment</h3>
-        <button class="icon-btn" value="cancel" aria-label="Close">×</button>
-      </header>
-
-      <ol class="progress">
-        <li class="active">Service</li>
-        <li>Groomer</li>
-        <li>Time</li>
-      </ol>
-
-      <section class="booking-step" data-step="1">
-        <fieldset>
-          <legend class="sr-only">Choose a service</legend>
-          <div class="choice-grid">
-            <label class="choice"><input type="radio" name="service" value="Bath & Brush" required> <span>Bath &amp; Brush</span></label>
-            <label class="choice"><input type="radio" name="service" value="Full Groom"> <span>Full Groom</span></label>
-            <label class="choice"><input type="radio" name="service" value="De-shedding"> <span>De‑shedding</span></label>
-            <label class="choice"><input type="radio" name="service" value="Puppy Intro"> <span>Puppy Intro</span></label>
-            <label class="choice"><input type="radio" name="service" value="Nail Trim"> <span>Nail Trim</span></label>
-          </div>
-        </fieldset>
-        <div class="modal-actions">
-          <button type="button" class="btn next-step">Next</button>
-        </div>
-      </section>
-
-      <section class="booking-step" data-step="2" hidden>
-        <fieldset>
-          <legend class="sr-only">Choose a groomer (optional)</legend>
-          <div class="choice-grid">
-            <label class="choice"><input type="radio" name="groomer" value="Any" checked> <span>First available</span></label>
-            <label class="choice"><input type="radio" name="groomer" value="Sarah De Leon"> <span>Sarah De&nbsp;Leon</span></label>
-            <label class="choice"><input type="radio" name="groomer" value="Alex"> <span>Alex</span></label>
-            <label class="choice"><input type="radio" name="groomer" value="Mia"> <span>Mia</span></label>
-          </div>
-        </fieldset>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-outline prev-step">Back</button>
-          <button type="button" class="btn next-step">Next</button>
-        </div>
-      </section>
-
-      <section class="booking-step" data-step="3" hidden>
-        <p>We’ll show only available times on the next screen.</p>
-        <div class="embed-wrap" id="bookingEmbed">
-          <!-- If you use Square Appointments: replace BOOKING_URL below in script.js.
-               If you use a WP plugin like Amelia, load it on /book and this button will link there. -->
-        </div>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-outline prev-step">Back</button>
-          <a id="proceedLink" class="btn" target="_blank" rel="noopener" data-gtm-event="booking_proceed">See times &amp; confirm</a>
-        </div>
-      </section>
-    </form>
-  </dialog>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner" role="region" aria-label="Cookie notice" hidden>
+    <div class="container cookie-inner">
+      <p>We use cookies to analyze website traffic and optimize your experience.</p>
+      <button id="acceptCookies" class="btn btn-small">Accept</button>
+    </div>
+  </div>
 
 </body>
 </html>
