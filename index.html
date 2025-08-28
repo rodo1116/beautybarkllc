@@ -10,13 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=3">
+  <link rel="stylesheet" href="./styles.css?v=1">
   <script defer src="./script.js"></script>
-
-  <!-- Inline fallback in case styles.css fails to load on GitHub Pages -->
-  <style id="fallback-colors">
-    html, body { background:#0f1115; color:#f5f7fb; }
-  </style>
+  <style id="fallback-colors">html, body{background:#0f1115;color:#f5f7fb}</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -25,7 +21,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="./" aria-label="The Beauty Bark Home">
-        <img class="brand-logo" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=200&auto=format&fit=crop" alt="" />
+        <img class="brand-logo" src="assets/logo-mark.svg" alt="" />
         <span class="brand-name">The Beauty Bark</span>
       </a>
 
@@ -34,12 +30,8 @@
         <ul id="navList" class="nav-list">
           <li><a href="./">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#faqs">FAQs</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#membership">Membership</a></li>
-          <li><a href="#daycare">Doggie Daycare</a></li>
-          <li><a href="#creative">Creative Grooming</a></li>
-          <li><a href="#boarding">Boarding</a></li>
           <li><a class="btn btn-small" href="#book">Book Now</a></li>
         </ul>
       </nav>
@@ -47,9 +39,9 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-inner">
+    <!-- Hero (Header Image with Text Overlay) -->
+    <section class="hero hero-bg">
+      <div class="container hero-inner overlay">
         <div class="hero-copy">
           <h1>Where Pets become pampered!</h1>
           <p>In the heart of Houston, our pet grooming salon ensures happy, well‑groomed pets.</p>
@@ -57,14 +49,6 @@
             <a href="#book" class="btn">Book Now</a>
             <a href="tel:2815296988" class="btn btn-outline">Call 281‑529‑6988</a>
           </div>
-          <ul class="trust">
-            <li>Gentle, stress‑aware handling</li>
-            <li>Breed‑specific styling</li>
-            <li>Transparent pricing</li>
-          </ul>
-        </div>
-        <div class="hero-media">
-          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop" alt="Happy freshly groomed dog" />
         </div>
       </div>
     </section>
